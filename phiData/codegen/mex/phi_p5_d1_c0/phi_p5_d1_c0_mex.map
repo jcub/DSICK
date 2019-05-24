@@ -1,0 +1,12 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		phi_p5_d1_c0;
+		phi_p5_d1_c0_initialize;
+		phi_p5_d1_c0_terminate;
+		phi_p5_d1_c0_atexit;
+	local:
+		*;
+};
