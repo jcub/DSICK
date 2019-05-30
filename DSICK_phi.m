@@ -1,8 +1,8 @@
-function u = phi(x,p,d,c)
+function u = DSICK_phi(x,p,d,c)
 % This function returns (d/dx)^c phi^{p,d}(x) where
 % p - the "GD" p representing the width of data, positive integer
 % d - the continuity order, non-negative integer
-% c - the number of spatcial derivatives of phi, non-negative integer
+% c - the number of spacial derivatives of phi, non-negative integer
 % x - the normalized spacial variable, real valued
 % This function will check if the file representing phi exists in the
 % search directory ('phiData/'). If not, it will create it using 'makePhi' 
@@ -25,7 +25,7 @@ if (dd ~= d || cc ~=c || p~=pp)
     copyfile(fileName, 'phiTemp.m')
     pp = p; dd = d; cc = c;
   else
-    makePhi(p,d,0);
+    DSICK_makePhi(p,d,0);
     copyfile(fileName, 'phiTemp.m')
     pp = p; dd = d; cc = c;
   end

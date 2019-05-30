@@ -1,9 +1,9 @@
-function ut = evalU(u,xjs,p,d,c,xs,iBCLeft, iBCRight)
+function ut = DSICK_evalU(u,xjs,p,d,c,xs,iBCLeft, iBCRight)
 % interpolates data u at points xj using (d/dx)^c phi^{p,d} for all points
 % xs.  Boundary conditions are specified using left and right conditions.
 % Example of usage:
 % xcourse = 0:.1:10; xfine = 0:.01:10;
-% ux = evalU(sin(.5*pi*xcourse),xcourse,5,1,0,xfine,[0,2],[0,2]);
+% ux = DSICK_evalU(sin(.5*pi*xcourse),xcourse,5,1,0,xfine,[0,2],[0,2]);
 % plot(xfine,ux)
 
 
@@ -33,7 +33,7 @@ uj(ia:ib) = u;
 
 ut = zeros(size(xs));
 
-phij = @(x,xj) phi((x-xj)/h,p,d,c);
+phij = @(x,xj) DSICK_phi((x-xj)/h,p,d,c);
 %phij = @(x,xj) phi((x-xj)/h,p);
 
 %% fill in ghost data
@@ -43,7 +43,7 @@ if any(iBCLeft == Displacement)
 else
   d = length(iBCLeft); 
 end
-weights = getDCompatCoeffs( d, ng, p, extrapOrd, iBCLeft);
+weights = DSICK_getDCompatCoeffs( d, ng, p, extrapOrd, iBCLeft);
 nw = length(weights);
 
 % Fill in left ghost values using DCompat
@@ -59,7 +59,7 @@ if any(iBCRight == Displacement)
 else
   d = length(iBCRight); 
 end
-weights = getDCompatCoeffs( d, ng, p, extrapOrd, iBCRight);
+weights = DSICK_getDCompatCoeffs( d, ng, p, extrapOrd, iBCRight);
 
 % Fill in right ghost values
 for ig = 1:ng

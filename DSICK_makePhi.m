@@ -1,4 +1,4 @@
-function phiOut = makePhi(p,d,c)
+function phiOut = DSICK_makePhi(p,d,c)
 % This function generates files of the form phi_p%i_d%i_c%i
 % these files are callable as functions representing (d/dx)^c phi^{p,d}(x)
 % with
@@ -92,7 +92,7 @@ end
 %% Generate symbolic phi using formula from paper.
 a = -w-1; b=-a;
 xi = a+1:b-1;
-deltas = generalDifferenceWeights(0,xi,d);
+deltas = DSICK_generalDifferenceWeights(0,xi,d);
 
 lH = -Nips/2+1; rH = Nips/2;
 phiI = 0;

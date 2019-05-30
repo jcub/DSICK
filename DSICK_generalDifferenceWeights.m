@@ -1,4 +1,4 @@
-function c = generalDifferenceWeights( z,x,m )
+function c = DSICK_generalDifferenceWeights( z,x,m )
 % This is a function for calculating the generalized finite difference
 % weights for up to the mth derivative at z using points x.
 % z = point of interest,         
