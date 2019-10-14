@@ -1,5 +1,6 @@
 function font( varargin )
 % Quickly changes fontsize of editor and commands. Nice for presentations
+% Known not to work for mlx documents. Use ctrl-+/-
 % Example usage 
 % >> font 16
 % >> font(16)  % same as above
@@ -9,6 +10,7 @@ function font( varargin )
 % valid styles 0, 1, 2 for plain, bold, and italic. (string 'bold' ect.
 % also ok.
 % valid fonts 'Monospaced', 'SansSerif', 'Serif'
+% Created by JJJ
 
 nargin = length(varargin);
 defaultText = 'Monospaced';
